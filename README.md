@@ -34,8 +34,8 @@ This proposal introduces the following syntax:
 |`expr1?.prop = val`|`expr1 == null ? undefined : expr1.prop = val`|`(expr1??{}).prop = val`|
 |`expr1?.prop += val`|`expr1 == null ? undefined : expr1.prop += val`|`(expr1??{}).prop += val`|
 |`expr1?.prop ??= val`|`expr1 == null ? undefined : expr1.prop ??= val`|`(expr1??{}).prop ??= val`|
-|`expr1?.[key] = val`|`expr1 == null?undefined:expr1[key]=val`|`(expr1??{})[key]=val`|
-|`expr1?.foo().prop[key]=val`|`expr1==null?undefined:pexpr1.foo().prop[key]=val`|`(expr1?.foo?.()?.prop??{})[key]=val`|
+|`expr1?.[key] = val`|`expr1 == null ? undefined : expr1[key] = val`|`(expr1??{})[key] = val`|
+|`expr1?.foo().prop[key] = val`|`expr1 == null ? undefined : expr1.foo().prop[key] = val`|`(expr1?.foo?.()?.prop??{})[key] = val`|
 
 ## Implementations
 
