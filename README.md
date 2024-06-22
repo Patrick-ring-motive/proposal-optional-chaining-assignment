@@ -29,13 +29,13 @@ You can look for examples of where you may use optional chaining in your project
 ## Description
 
 This proposal introduces the following syntax:
-| **New syntax** | **Equivalent ES2023** |
-|:--:|:--:|
-| `expr1?.prop = val`   | `expr1 == null ? undefined : expr1.prop = val`   |
-| `expr1?.prop += val`  | `expr1 == null ? undefined : expr1.prop += val`  |
-| `expr1?.prop ??= val` | `expr1 == null ? undefined : expr1.prop ??= val` |
-| `expr1?.[key] = val`  | `expr1 == null ? undefined : expr1[key] = val`   |
-| `expr1?.foo().prop[key] = val`  | `expr1 == null ? undefined : expr1.foo().prop[key] = val`   |
+| **New syntax** | **Equivalent ES2023** | **Short Equivalent** |
+|:--:|:--:|:--:|
+| `expr1?.prop = val`   | `expr1 == null ? undefined : expr1.prop = val`   | `(expr1??{}).prop = val`  |
+| `expr1?.prop += val`  | `expr1 == null ? undefined : expr1.prop += val`  | `(expr1??{}).prop += val` |
+| `expr1?.prop ??= val` | `expr1 == null ? undefined : expr1.prop ??= val` | `(expr1??{}).prop ??= val` |
+| `expr1?.[key] = val`  | `expr1 == null ? undefined : expr1[key] = val`   | `(expr1??{})[key] = val` |
+| `expr1?.foo().prop[key] = val`  | `expr1 == null ? undefined : expr1.foo().prop[key] = val`   |`(expr1?.foo?.()?.prop??{})[key] = val` |
 
 ## Implementations
 
