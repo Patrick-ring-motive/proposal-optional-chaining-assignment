@@ -31,10 +31,8 @@ You can look for examples of where you may use optional chaining in your project
 This proposal introduces the following syntax:
 | **New syntax** | **Equivalent ES2023** | **Short Functional Equivalent** |
 |:--:|:--:|:--:|
-|`expr1?.prop=val`|`expr1 
-==null?undefined:expr1.prop=val`|`(expr1??{}).prop=val`|
-|`expr1?.prop+=val`|`expr1== null?
-undefined:expr1.prop+=val`|`(expr1??{}).prop+=val`|
+|`expr1?.prop=val`|`expr1==null?undefined:expr1.prop=val`|`(expr1??{}).prop=val`|
+|`expr1?.prop+=val`|`expr1==null?undefined:expr1.prop+=val`|`(expr1??{}).prop+=val`|
 |`expr1?.prop??=val`|`expr1== null?undefined:expr1.prop??=val`|`(expr1??{}).prop??=val`|
 |`expr1?.[key]=val`|`expr1==null?undefined:expr1[key]=val`|`(expr1??{})[key]=val`|
 |`expr1?.foo().prop[key]=val`|`expr1==null?undefined:pexpr1.foo().prop[key]=val`|`(expr1?.foo?.()?.prop??{})[key]=val`|
